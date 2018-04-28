@@ -1,22 +1,22 @@
-let stations = [];
-let position = [6.2404155, -75.5552808];
+var stations = [];
+var position = [6.2404155, -75.5552808];
 
 function initMap() {
-  let latlng = new google.maps.LatLng(position[0], position[1]);
+  var latlng = new google.maps.LatLng(position[0], position[1]);
   // MAPA --------------------------------------------------->>>>>>>>
-  let map = crearMapa();
+  var map = crearMapa();
   // RUTA --------------------------------------------------->>>>>>>>
-  let flightPath = crearRuta(map, rutaTranvia_D_O);
+  var flightPath = crearRuta(map, rutaTranvia_D_O);
   // Estaciones --------------------------------------------->>>>>>>>
-  let san_antonio = crearEstacion(map, estacionSanAntonio);
-  let san_jose = crearEstacion(map, estacionSanJose);
-  let pabellon_de_agua = crearEstacion(map, estacionPabellonDeAgua);
-  let bicentenario = crearEstacion(map, estacionBicentenario);
-  let buenos_aires = crearEstacion(map, estacionBuenosAires);
-  let miraflores = crearEstacion(map, estacionMiraflores);
-  let loyola = crearEstacion(map, estacionLoyola);
-  let alejandro_echavarria = crearEstacion(map, estacionAlejandroEchavarria)
-  let oriente = crearEstacion(map, estacionOriente);
+  var san_antonio = crearEstacion(map, estacionSanAntonio);
+  var san_jose = crearEstacion(map, estacionSanJose);
+  var pabellon_de_agua = crearEstacion(map, estacionPabellonDeAgua);
+  var bicentenario = crearEstacion(map, estacionBicentenario);
+  var buenos_aires = crearEstacion(map, estacionBuenosAires);
+  var miraflores = crearEstacion(map, estacionMiraflores);
+  var loyola = crearEstacion(map, estacionLoyola);
+  var alejandro_echavarria = crearEstacion(map, estacionAlejandroEchavarria)
+  var oriente = crearEstacion(map, estacionOriente);
 
   google.maps.event.addListener(map, 'click', function(event) {
     placeMarker(event.latLng);
@@ -41,11 +41,11 @@ function initMap() {
     }
   });
 
-  let cont2 = 1
-  let interval = setInterval(function(){ 
-    let actual = rutaTranvia_D_O[cont2]
-    let pasado = cont2 == 0 ? 1 : rutaTranvia_D_O[cont2 - 1]
-    let result = [actual.lat, actual.lng];
+  var cont2 = 1
+  var interval = setInterval(function(){ 
+    var actual = rutaTranvia_D_O[cont2]
+    var pasado = cont2 == 0 ? 1 : rutaTranvia_D_O[cont2 - 1]
+    var result = [actual.lat, actual.lng];
     actual_speed = speed(actual, pasado);
     transition(result);
     marker.setOptions({ label: { text: actual_speed }})

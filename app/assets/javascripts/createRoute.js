@@ -1,5 +1,5 @@
 function crearRuta(map, r_path) {
-  let route = new google.maps.Polyline({
+  var route = new google.maps.Polyline({
     path: r_path,
     geodesic: false,
     strokeColor: '#00b300',

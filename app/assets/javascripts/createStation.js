@@ -1,5 +1,5 @@
 function crearEstacion(map, station) { 
-  let actual_station = new google.maps.Polygon({
+  var actual_station = new google.maps.Polygon({
     paths: station.path,
     strokeColor: '#007ba0',
     strokeOpacity: 1,
@@ -9,7 +9,7 @@ function crearEstacion(map, station) {
   });
   actual_station.setMap(map);
   
-  let marker = new google.maps.Marker({
+  var marker = new google.maps.Marker({
     position: {lat: 0, lng: 0}, 
     icon: {
       url: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Linea_M_%28Logo_Metro_Medellin%29.png",

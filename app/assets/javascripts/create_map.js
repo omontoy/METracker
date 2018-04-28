@@ -1,5 +1,5 @@
 function crearMapa() {
-  let map = new google.maps.Map(document.getElementById('select_mapa'), {
+  var map = new google.maps.Map(document.getElementById('select_mapa'), {
     center: {lat:6.2404155, lng:-75.5552808},
     zoom: 15.30,
     // maxZoom: 19,
