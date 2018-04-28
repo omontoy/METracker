@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row principal mt-3">
+		<div class="col-12 pb-4 titulo text-center ">
+			<h2 class="my-4">Seleccionar Mapa</h2>
+			<button class="b_mapaC">Mapa Completo</button>
+			<button class="b_mapaE">Mapa Especifico</button>
+		</div>
+	</div>
+  <hr>  
+	<div class="row complete_map">
+		<div class="col-10 offset-1 select_mapa mt-2" id="select_mapa">
+		</div>
+    <div class="col-12 text-center">
+      <%= link_to "Pantalla Completa",completo_admin_mapas_path ,class:"btn btn-info my-4" %>
+    </div>
+  </div>
+</div>
+<script>
+  new DesplegarMapa();
+</script>
