@@ -4,6 +4,7 @@ class DesplegarMapa
     @map = initMap();
     $('.complete_map').show();
     $('.b_mapaC').on 'click', () =>
+      console.log( "ready!" );
       @mapa_completo(@map)
 
     $('.b_mapa1').on 'click', () =>
