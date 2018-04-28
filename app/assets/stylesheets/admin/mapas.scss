@@ -4,7 +4,7 @@
   border-radius: 10px; 
 	button {
     background-color: #B3FF01;
-    margin: 0 10px;
+    margin: 10px 5px;
     padding: 5px 15px;
     border-radius: 10px;
     border-color: #4C4C4C;
@@ -14,10 +14,14 @@
       transition: 0.5s;
     }
   }
+  span {
+    font-size: 22px;
+    font-weight: bold;
+  }
   .complete_map {
     display: none;
     .select_mapa {
-      height: 450px;
+      height: 650px;
       border: 2px solid #B8B8B8;
       border-radius: 2px;
     }

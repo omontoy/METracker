@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'admin/mapas#index'
+
   devise_for :users
 
   namespace :admin do
