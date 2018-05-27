@@ -1,30 +1,37 @@
-<div class="container pb-4 my-3">
-	<div class="row principal my-3">
-		<div class="col-12 pt-2 titulo text-center ">
-      <button class="b_mapaC">Mapa Completo</button>
+<div class="container pb-4 my-3 bg-white">
+	<div class="principal d-flex flex-column my-3">
+		<div class="text-center mt-4">
+      <button class="b_mapaC btn btn-success">Mapa Completo</button>
 		</div>
-    <div class="col-12 pt-2 titulo text-center ">
-      <span>Estaciones:</span>
-      <br>
-      <button class="b_mapa1">San Antonio</button>
-      <button class="b_mapa2">San Jose</button>
-      <button class="b_mapa3">Pabellon De Agua</button>
-      <button class="b_mapa4">Bicentenario</button>
-      <button class="b_mapa5">Buenos Aires</button>
-      <button class="b_mapa6">Miraflores</button>
-      <button class="b_mapa7">Loyola</button>
-      <button class="b_mapa8">Alejandro Echavarria</button>
-      <button class="b_mapa9">Oriente</button>
+    <div class="text-center d-flex flex-column mt-3">
+      <span><b>Estaciones</b></span>
+			<div class="buttons mt-2">
+				<button class="b_mapa1 btn btn-info btn-sm">San Antonio</button>
+				<button class="b_mapa2 btn btn-info btn-sm">San Jose</button>
+				<button class="b_mapa3 btn btn-info btn-sm">Pabellon De Agua</button>
+				<button class="b_mapa4 btn btn-info btn-sm">Bicentenario</button>
+				<button class="b_mapa5 btn btn-info btn-sm">Buenos Aires</button>
+				<button class="b_mapa6 btn btn-info btn-sm">Miraflores</button>
+				<button class="b_mapa7 btn btn-info btn-sm">Loyola</button>
+				<button class="b_mapa8 btn btn-info btn-sm">Alejandro Echavarria</button>
+				<button class="b_mapa9 btn btn-info btn-sm">Oriente</button>
+			</div>
     </div>
 	</div>
-  <hr>  
+  <hr>
 	<div class="row complete_map">
 		<div class="col-10 offset-1 select_mapa" id="select_mapa">
 		</div>
   </div>
 </div>
 <script>
-  $( document ).ready(function() {
-    new DesplegarMapa();
+  $(document).ready(function() {
+		var pusher = new Pusher('2fc3ea72dbaa03b65735', {
+		  cluster: 'us2',
+		  encrypted: true
+		});
+		var channel = pusher.subscribe('messages_channel');
+
+    new DesplegarMapa(channel);
   });
 </script>

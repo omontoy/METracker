@@ -1,22 +1,7 @@
 .container {
-  width: 100%;
-  background-color: white;
-  border-radius: 10px; 
-	button {
-    background-color: #B3FF01;
-    margin: 10px 5px;
-    padding: 5px 15px;
-    border-radius: 10px;
-    border-color: #4C4C4C;
-    cursor: pointer;
-    &:hover {
-      background-color: #89BF00;
-      transition: 0.5s;
-    }
-  }
+ font-size: 18px;
   span {
     font-size: 22px;
-    font-weight: bold;
   }
   .complete_map {
     display: none;
@@ -29,5 +14,5 @@
 }
 
 .principal {
-  min-height: 100%; 
+  min-height: 100%;
 }
