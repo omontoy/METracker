@@ -1,4 +1,3 @@
-
 class DesplegarMapa
   constructor: (channel) ->
     @map = initMap();
@@ -41,7 +40,7 @@ class DesplegarMapa
 
 
   mapa_completo: (map) ->
-    map.setZoom(15.49);
+    map.setZoom(15.99);
     center = new google.maps.LatLng(6.2404155, -75.5552808)
     map.panTo(center)
 
@@ -90,17 +89,11 @@ class DesplegarMapa
     center = new google.maps.LatLng(6.23385004536527, -75.54065358528771)
     map.panTo(center)
 
+
   new_position: (coords) ->
     result = [coords.lat, coords.lng]
     transition(result)
-    # marker.setPosition(latlng);
+    info_details(coords.speed)
 
 
 window.DesplegarMapa = DesplegarMapa
-
-
-# class Desplegarmapa_e
-#   constructor: ->
-#     $('.select_map').remove();
-
-# window.DesplegarMapa_Completo = DesplegarMapa_Completo

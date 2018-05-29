@@ -17,3 +17,12 @@ function resizeMarkersText(map) {
     }
   }
 }
+
+function info_details(speed) {
+  $('.trains-details .speed span').text(speed)
+  if (speed > 0) {
+    $('.trains-details .status').text("En trayecto").removeClass("table-danger").addClass("table-primary")
+  } else {
+    $('.trains-details .status').text("Detenido").removeClass("table-primary").addClass("table-danger")
+  }
+}

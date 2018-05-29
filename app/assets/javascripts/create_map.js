@@ -1,14 +1,14 @@
 function crearMapa() {
   var map = new google.maps.Map(document.getElementById('select_mapa'), {
     center: {lat:6.2404155, lng:-75.5552808},
-    zoom: 15.30,
-    // maxZoom: 19,
+    zoom: 16.08,
     minZoom: 14.15,
     draggable: false,
     draggableCursor: 'default',
     streetViewControl: false,
     zoomControl: false,
     mapTypeControl: false,
+    fullscreenControl: false,
     styles: [
       {elementType: 'geometry', stylers: [{color: '#ffffff'}]},
       {

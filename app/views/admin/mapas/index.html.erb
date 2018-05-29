@@ -1,31 +1,82 @@
-<div class="container pb-4 my-3 bg-white">
-	<div class="principal d-flex flex-column my-3">
-		<div class="text-center mt-4">
-      <button class="b_mapaC btn btn-success">Mapa Completo</button>
-		</div>
-    <div class="text-center d-flex flex-column mt-3">
-      <span><b>Estaciones</b></span>
-			<div class="buttons mt-2">
-				<button class="b_mapa1 btn btn-info btn-sm">San Antonio</button>
-				<button class="b_mapa2 btn btn-info btn-sm">San Jose</button>
-				<button class="b_mapa3 btn btn-info btn-sm">Pabellon De Agua</button>
-				<button class="b_mapa4 btn btn-info btn-sm">Bicentenario</button>
-				<button class="b_mapa5 btn btn-info btn-sm">Buenos Aires</button>
-				<button class="b_mapa6 btn btn-info btn-sm">Miraflores</button>
-				<button class="b_mapa7 btn btn-info btn-sm">Loyola</button>
-				<button class="b_mapa8 btn btn-info btn-sm">Alejandro Echavarria</button>
-				<button class="b_mapa9 btn btn-info btn-sm">Oriente</button>
-			</div>
-    </div>
+<div class="principal w-100 h-100">
+
+	<div class="select_mapa w-100 h-100" id="select_mapa"></div>
+
+	<div class="show-buttons pl-2 pt-1">
+		<%= fa_icon "angle-double-right 2x" %>
 	</div>
-  <hr>
-	<div class="row complete_map">
-		<div class="col-10 offset-1 select_mapa" id="select_mapa">
+
+	<div class="buttons-display d-flex justify-content-between flex-column px-2 h-100">
+		<div class="top-button">
+			<%= fa_icon "chevron-circle-left", class: "close pl-1 pt-1" %>
+			<%= image_tag "/assets/logo.png", class: "w-100 rounded mt-2" %>
 		</div>
-  </div>
+
+		<div class="buttons d-flex flex-column">
+			<button class="b_mapaC active btn btn-default mb-4 py-2">Mapa Completo</button>
+			<button class="b_mapa1 btn btn-default btn-sm my-2">San Antonio</button>
+			<button class="b_mapa2 btn btn-default btn-sm my-2">San José</button>
+			<button class="b_mapa3 btn btn-default btn-sm my-2">Pabellón Del Agua</button>
+			<button class="b_mapa4 btn btn-default btn-sm my-2">Bicentenario</button>
+			<button class="b_mapa5 btn btn-default btn-sm my-2">Buenos Aires</button>
+			<button class="b_mapa6 btn btn-default btn-sm my-2">Miraflores</button>
+			<button class="b_mapa7 btn btn-default btn-sm my-2">Loyola</button>
+			<button class="b_mapa8 btn btn-default btn-sm my-2">Alejandro Echavarría</button>
+			<button class="b_mapa9 btn btn-default btn-sm my-2">Oriente</button>
+		</div>
+
+		<span class="text-center">© 2018 - METracker</span>
+	</div>
+
+	<div class="trains-details">
+		<table class="table table-sm mb-0">
+			<thead>
+		    <tr>
+		      <th scope="col"></th>
+		      <th scope="col" class="px-4">Velocidad</th>
+		      <th scope="col" class="px-4">Estatus</th>
+					<th class="px-5"></th>
+		    </tr>
+		  </thead>
+			<tbody>
+		    <tr class="bg-light text-dark">
+		      <th class="pr-2">TA-12NT</th>
+		      <td class="speed text-center"><span>0</span> Km/H</td>
+		      <td class="status text-center">-</td>
+					<td class="text-center">
+						<%= fa_icon "map-marker lg", class: "actions text-danger pr-1" %>
+						<%= fa_icon "phone lg", class: "actions text-info pr-2" %>
+					</td>
+		    </tr>
+
+				<tr class="bg-light text-dark">
+		      <th class="pr-2">TA-13NT</th>
+		      <td class="text-center"><span></span>Sin Servicio</td>
+		      <td class="text-center">Sin Servicio</td>
+					<td class="text-center">
+						<%= fa_icon "map-marker lg", class: "text-danger pr-1" %>
+						<%= fa_icon "phone lg", class: "text-info pr-2" %>
+					</td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<div class="display-details d-flex justify-content-between text-center py-1 px-3">
+			<%= fa_icon "sort", class: "rounded-circle mt-1" %>
+			<span class="tranvia vertical-aling-center"><%= fa_icon "subway xs"%> Tranvías</span>
+			<%= fa_icon "sort", class: "rounded-circle mt-1" %>
+		</div>
+	</div>
 </div>
+
+
 <script>
   $(document).ready(function() {
+		$('.buttons').on('click', 'button', function(){
+			$('.active').removeClass('active');
+			$(this).addClass('active');
+		})
+
 		var pusher = new Pusher('2fc3ea72dbaa03b65735', {
 		  cluster: 'us2',
 		  encrypted: true
@@ -33,5 +84,6 @@
 		var channel = pusher.subscribe('messages_channel');
 
     new DesplegarMapa(channel);
+		new PageActions();
   });
 </script>

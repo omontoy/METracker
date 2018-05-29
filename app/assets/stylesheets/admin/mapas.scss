@@ -1,18 +1,45 @@
-.container {
- font-size: 18px;
-  span {
-    font-size: 22px;
+.buttons-display {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 1s;
+  transform: translateX(0);
+
+  .btn-default {
+    color: white;
+    font-size: 15px;
+    background-color: #322828;
+    border-radius: 0;
   }
-  .complete_map {
-    display: none;
-    .select_mapa {
-      height: 650px;
-      border: 2px solid #B8B8B8;
-      border-radius: 2px;
-    }
+
+  .active {
+    color: rgb(53, 184, 0);
+    border: 2px solid rgb(53, 184, 0);
+  }
+
+  span {
+    font-size: 14px;
   }
 }
 
-.principal {
-  min-height: 100%;
+.buttons-display.hide {
+  transform: translateX(-100%);
+}
+
+.show-buttons {
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: 1s;
+  position: absolute;
+  top: 0;
+  left: 300px;
+  z-index: 4;
+}
+
+.show-buttons.show {
+  opacity: 1;
+  visibility: visible;
+  left: 0;
 }

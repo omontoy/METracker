@@ -1,0 +1,29 @@
+.trains-details {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  transition: 1s;
+
+
+  table {
+    border: 2px solid #322828;
+    background-color: #322828;
+    font-size: 15px;
+    color: white;
+
+    thead th { border: 0; }
+    .actions { cursor: pointer; }
+  }
+
+  .display-details {
+    font-size: 16px;
+    color: white;
+    background-color: #322828;
+    cursor: pointer;
+    .tranvia i { color: rgb(53, 184, 0); }
+  }
+}
+
+.trains-details.hide {
+  transform: translateY(-75%);
+}
