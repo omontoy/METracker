@@ -21,8 +21,10 @@ function resizeMarkersText(map) {
 function info_details(speed) {
   $('.trains-details .speed span').text(speed)
   if (speed > 0) {
-    $('.trains-details .status').text("En trayecto").removeClass("table-danger").addClass("table-primary")
+    $('.trains-details .status').text("En marcha").removeClass("table-danger").addClass("table-primary")
   } else {
     $('.trains-details .status').text("Detenido").removeClass("table-primary").addClass("table-danger")
+    $('.alert-section .alert-train-1').fadeIn('1000')
+    setTimeout(function() { $(".alert-section .alert-train-1").fadeOut(2000); }, 2000);
   }
 }

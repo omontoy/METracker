@@ -35,6 +35,9 @@ class DesplegarMapa
     $('.b_mapa9').on 'click', () =>
       @mapa_e9(@map)
 
+    $('.set-train-location').on 'click', () =>
+      @center_map_to(@map)
+
     channel.bind 'my-message', (data) =>
       @new_position(data.coords)
 
@@ -94,6 +97,12 @@ class DesplegarMapa
     result = [coords.lat, coords.lng]
     transition(result)
     info_details(coords.speed)
+
+  center_map_to: (map) ->
+    map.setZoom(18.30)
+    new_center = train_1.getPosition()
+    map.panTo(new_center)
+
 
 
 window.DesplegarMapa = DesplegarMapa

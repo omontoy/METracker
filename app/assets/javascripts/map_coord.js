@@ -44,7 +44,7 @@ var estacionSanJose = {
   ]
 };
 var estacionPabellonDeAgua = {
-  name: "Pabellón Del Agua",
+  name: "Pabellón del Agua EPM",
   marker_coord:
   [
     {lat: 6.24511787218796, lng: -75.56311035531141}, {lat: 6.24541787218796, lng: -75.56265035531141}, {lat: 6.24546787218796, lng: -75.56245035531141}, {lat: 6.24547787218796, lng: -75.56231035531141}

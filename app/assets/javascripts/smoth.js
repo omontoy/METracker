@@ -15,7 +15,7 @@ function moveMarker(){
   position[0] += deltaLat;
   position[1] += deltaLng;
   var latlng = new google.maps.LatLng(position[0], position[1]);
-  marker.setPosition(latlng);
+  train_1.setPosition(latlng);
   if(i!=numDeltas){
     i++;
     setTimeout(moveMarker, delay);

@@ -7,7 +7,7 @@ function initTrain(map) {
     scaledSize: new google.maps.Size(10, 10)
   };
 
-  marker = new google.maps.Marker({
+  train_1 = new google.maps.Marker({
     map: map,
     icon: image,
     label: {
