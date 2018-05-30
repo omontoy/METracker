@@ -38,12 +38,8 @@ class DesplegarMapa
     $('.set-train-1-location').on 'click', () =>
       @center_map_to(@map, train_1)
 
-    $('.set-train-2-location').on 'click', () =>
-      @center_map_to(@map, train_2)
-
     channel.bind 'my-message', (data) =>
       @new_position_marker1(data.coords_train1)
-      @new_position_marker2(data.coords_train2)
 
 
   mapa_completo: (map) ->
@@ -101,11 +97,6 @@ class DesplegarMapa
     result = [coords.lat, coords.lng]
     transition_1(result)
     info_details_1(coords.speed)
-
-  new_position_marker2: (coords) ->
-    result = [coords.lat, coords.lng]
-    transition_2(result)
-    info_details_2(coords.speed)
 
   center_map_to: (map, train) ->
     map.setZoom(18.30)

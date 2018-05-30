@@ -22,20 +22,9 @@ function info_details_1(speed) {
   $('.trains-details .train_1 .speed span').text(speed)
   if (speed > 0) {
     $('.trains-details .train_1 .status').text("En marcha").removeClass("table-danger").addClass("table-primary")
+    $(".alert-section .alert-train-1").fadeOut(1000);
   } else {
     $('.trains-details .train_1 .status').text("Detenido").removeClass("table-primary").addClass("table-danger")
     $('.alert-section .alert-train-1').show()
-    $(".alert-section .alert-train-1").fadeOut(1000)
-  }
-}
-
-function info_details_2(speed) {
-  $('.trains-details .train_2 .speed span').text(speed)
-  if (speed > 0) {
-    $('.trains-details .train_2 .status').text("En marcha").removeClass("table-danger").addClass("table-primary")
-  } else {
-    $('.trains-details .train_2 .status').text("Detenido").removeClass("table-primary").addClass("table-danger")
-    $('.alert-section .alert-train-2').show()
-    $(".alert-section .alert-train-2").fadeOut(1000)
   }
 }
