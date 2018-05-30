@@ -1,5 +1,6 @@
 var stations = [];
 var position = [6.2404155, -75.5552808];
+var position_2 = [6.2404155, -75.5552808];
 
 function initMap() {
   var latlng = new google.maps.LatLng(position[0], position[1]);

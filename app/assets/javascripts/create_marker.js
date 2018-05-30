@@ -14,4 +14,12 @@ function initTrain(map) {
       fontSize: "13px"
     }
   });
+
+  train_2 = new google.maps.Marker({
+    map: map,
+    icon: image,
+    label: {
+      fontSize: "13px"
+    }
+  });
 }

@@ -35,11 +35,15 @@ class DesplegarMapa
     $('.b_mapa9').on 'click', () =>
       @mapa_e9(@map)
 
-    $('.set-train-location').on 'click', () =>
-      @center_map_to(@map)
+    $('.set-train-1-location').on 'click', () =>
+      @center_map_to(@map, train_1)
+
+    $('.set-train-2-location').on 'click', () =>
+      @center_map_to(@map, train_2)
 
     channel.bind 'my-message', (data) =>
-      @new_position(data.coords)
+      @new_position_marker1(data.coords_train1)
+      @new_position_marker2(data.coords_train2)
 
 
   mapa_completo: (map) ->
@@ -93,14 +97,19 @@ class DesplegarMapa
     map.panTo(center)
 
 
-  new_position: (coords) ->
+  new_position_marker1: (coords) ->
     result = [coords.lat, coords.lng]
-    transition(result)
-    info_details(coords.speed)
+    transition_1(result)
+    info_details_1(coords.speed)
 
-  center_map_to: (map) ->
+  new_position_marker2: (coords) ->
+    result = [coords.lat, coords.lng]
+    transition_2(result)
+    info_details_2(coords.speed)
+
+  center_map_to: (map, train) ->
     map.setZoom(18.30)
-    new_center = train_1.getPosition()
+    new_center = train.getPosition()
     map.panTo(new_center)
 
 
